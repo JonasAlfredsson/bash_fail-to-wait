@@ -54,4 +54,4 @@ code 127.
 
 
 
-[1]: https://github.com/JonasAlfredsson/docker-nginx-certbot/blob/master/src/scripts/start_nginx_certbot.sh#L96
+[1]: https://github.com/JonasAlfredsson/docker-nginx-certbot/blob/master/src/scripts/start_nginx_certbot.sh#L97
