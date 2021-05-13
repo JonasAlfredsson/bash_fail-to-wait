@@ -1,7 +1,7 @@
 # bash_fail-to-wait
 
 Small repository used to reproduce a potential bug with the `wait` command in
-Bash >5.0.
+Bash >=5.1.0
 
 ## The Problem
 The `wait` command cannot be called again after it has been interrupted by a
@@ -12,9 +12,10 @@ sort.
 
 ## What Is Happening
 In the `fail_to_wait.sh` I create a `trap` for SIGHUP which only prints that
-such a signal has been received. However, this cause the `wait` at the bottom
-to return, but since we still want to wait for our child process we loop and
-wait again in the case that the exit code was 128+SIGHUP=129.
+a signal of this type has been received. Sending in such a signal will cause the
+`wait` at the bottom to return (this is expected), but since we still want to
+wait for our child process we loop and wait again in the case that the exit code
+was 128+SIGHUP=129.
 
 In Bash 5.0.3 this works as expected, and the script will return to waiting for
 the child process to exit. However, in Bash 5.1.0 we get an error from `wait`
