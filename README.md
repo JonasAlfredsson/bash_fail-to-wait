@@ -1,5 +1,7 @@
 # bash_fail-to-wait
 
+> :information_source: This is fixed in [Bash-5.1 patch 10][2].
+
 Small repository used to reproduce a potential bug with the `wait` command in
 Bash >=5.1.0
 
@@ -56,3 +58,4 @@ code 127.
 
 
 [1]: https://github.com/JonasAlfredsson/docker-nginx-certbot/blob/master/src/scripts/start_nginx_certbot.sh#L97
+[2]: https://git.savannah.gnu.org/cgit/bash.git/commit/?id=910fcdc415abeb3d7d85fb46ee0d3e804a4c47a6
